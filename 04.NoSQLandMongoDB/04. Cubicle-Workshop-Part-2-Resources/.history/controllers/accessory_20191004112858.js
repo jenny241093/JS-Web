@@ -1,0 +1,1 @@
+const accessoryModel = require('../models/accessory');
