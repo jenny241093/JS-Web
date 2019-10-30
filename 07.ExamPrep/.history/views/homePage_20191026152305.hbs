@@ -1,0 +1,45 @@
+{{#if isLoggedIn}}
+<section class="actions">
+            <form action="">
+                <h2>Salary time? Refill your account amount.</h2>
+                <input type="text" id="refill-amount">
+                <button type="submit">Refill</button>
+            </form>
+            <div>
+                <h2>New expense comming up?</h2>
+                <a href="#">Add it now</a>
+            </div>
+        </section>
+{{else}}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Video Tutorials</h1>
+        <p class="lead">Start Self-Study Today: It'll Change Your Life</p>
+    </div>
+</div>
+{{/if}}
+
+{{#if expenses}}
+ <hr class="separator">
+
+        <table class="expenses">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Merchant</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                </tr>
+
+            </thead>
+            <tbody>
+               {{#each expense}}
+            {{> expense}}
+            {{/each}}
+
+            </tbody>
+        </table>
+{{else}}
+<h1 class="no-expenses">No expenses founded so far.. <span>GOOD JOB!</span></h1>
+{{/if}}
